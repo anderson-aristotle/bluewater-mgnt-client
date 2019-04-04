@@ -7,7 +7,7 @@ const createAccount = function (formData) {
   return $.ajax({
     url: config.apiUrl + '/accounts',
     method: 'POST',
-    headers: {
+
       Authorization: 'Token token=' + store.user.token
     },
     data: formData

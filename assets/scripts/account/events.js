@@ -17,7 +17,7 @@ const onCreateAccount = (event) => {
 const onGetAccounts = function () {
   api.getAccounts()
     .then(ui.getAccountsSuccess)
-    .catch(ui.getAccountsFailure)
+    .catch(ui.)
 }
 
 const onDeleteAccount = function (event) {
