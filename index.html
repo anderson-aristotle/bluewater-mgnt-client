@@ -16,8 +16,9 @@
     <body>
       <div id="user-message" style="width: 500px; height: 20px;"></div>
 
+                          <!-- Authentication Page  -->
       <section class="authentication-page" id="authentication-page">
-        <img class="animated flip delay-1s" style="height: 40px; position: absolute; left:10px; bottom: 10px;" src="public/bucket.png" alt="bucket">
+        <!-- <img class="animated flip delay-1s" style="height: 40px; position: absolute; left:10px; bottom: 10px;" src="public/bucket.png" alt="bucket"> -->
         <p  style="font-size: 60px; color: saddlebrown; text-align: center;">Bucket List</p>
         <div id="sign-in" class="container">
           <div class="row">
@@ -25,6 +26,8 @@
               <div class="card card-signin my-5">
                 <div class="card-body">
                   <h5 class="card-title text-center" style="font-size: 30px;">Sign In</h5>
+
+                          <!-- Sign-In Form -->
                   <form id="form-sign-in">
                     <div class="form-label-group">
                       <input type="email" name="credentials[email]" id="inputEmailSignIn" class="form-control" placeholder="Email address" />
@@ -49,6 +52,8 @@
               <div class="card card-signin my-5">
                 <div class="card-body">
                   <h5 class="card-title text-center" style="font-size: 30px;">Sign Up</h5>
+
+                            <!-- Sign-Up Form -->
                   <form class="form-sign-up" id="form-sign-up">
                     <div class="form-label-group">
                       <input name="credentials[firstName]" type="text" id="inputFirstName" class="form-control" placeholder="First Name" required autofocus>
@@ -81,6 +86,7 @@
         </div>
       </section>
 
+                        <!-- Landing Page -  Sign-Out Button - Modal -->
       <section class="bucket-list-page" id="bucket-list-page">
         <nav class="hidden">
           <button type="button" id="sign-out-button" class="btn btn-primary" data-toggle="modal" data-target="#signOutModal" data-whatever="@fat" style="margin-left: 20px;">Sign Out</button>

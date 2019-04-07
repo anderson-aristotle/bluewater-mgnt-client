@@ -8,7 +8,6 @@ const events = require('../list-items/events')
 
 const onSignUp = (event) => {
   event.preventDefault()
-
   const formData = getFormFields(event.target)
   api.signUp(formData)
     .then(ui.signUpSuccess)
