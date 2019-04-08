@@ -25,6 +25,7 @@ const signInSuccess = (responseData) => {
   setTimeout(function () {
     $('#user-message').text('')
   }, 2000)
+  $('.post-login').show()
 }
 
 const changePasswordSuccess = (responseData) => {
@@ -50,6 +51,7 @@ const signOutSuccess = (responseData) => {
   $('#bucket-list-page').hide()
   $('#authentication-page').show()
   hideOwnership()
+  $('.post-login').hide()
 }
 
 const signUpFailure = () => {

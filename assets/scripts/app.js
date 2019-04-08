@@ -1,7 +1,11 @@
 const authEvents = require('./authentication/events.js')
 const listItemsEvents = require('./list-items/events.js')
+const pageEvents = require('./page/events.js')
 
 $(() => {
+  $('.post-login').hide()
+  // $('#accounts-page').hide()
+  pageEvents.addHandlers()
   $('.modal').on('hidden.bs.modal', function () { $(this).find('form').trigger('reset') })
   $('#form-sign-up').on('submit', authEvents.onSignUp)
   $('#form-sign-in').on('submit', authEvents.onSignIn)
