@@ -82,7 +82,6 @@ const deleteListItemFailure = () => {
 }
 
 module.exports = {
-  ,
   getListItemsSuccess,
   updateListItemSuccess,
   deleteListItemSuccess,
