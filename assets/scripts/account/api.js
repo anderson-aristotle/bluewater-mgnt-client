@@ -3,11 +3,11 @@
 const config = require('../config.js')
 const store = require('../store.js')
 
-const createAccount = function (formData) {
+const onCreateAccount = function (formData) {
   return $.ajax({
     url: config.apiUrl + '/accounts',
     method: 'POST',
-
+    headers: {
       Authorization: 'Token token=' + store.user.token
     },
     data: formData
@@ -31,7 +31,6 @@ const deleteAccount = function (id) {
     headers: {
       Authorization: 'Token token=' + store.user.token
     }
-
   })
 }
 
@@ -47,7 +46,7 @@ const updateAccount = function (id, formData) {
 }
 
 module.exports = {
-  createAccount,
+  onCreateAccount,
   getAccount,
   updateAccount,
   deleteAccount
