@@ -16,7 +16,6 @@ const showOwnership = () => {
 }
 
 const onCreateAccountSuccess = (responseData) => {
-  console.log('data is success!')
   $('#user-message').text('You have successfully added an account!')
   setTimeout(function () {
     $('#user-message').text('')
@@ -31,8 +30,7 @@ const onCreateAccountFailure = () => {
   $('form').trigger('reset')
 }
 
-const getAccountSuccess = function (responseData) {
-  console.log('get account success is activated')
+const onGetAccountSuccess = function (responseData) {
   store.accounts = responseData.accounts
   const formattedListItems = formatAccounts({accounts: store.accounts})
   $('#get-accounts').html(formattedListItems)
@@ -40,30 +38,32 @@ const getAccountSuccess = function (responseData) {
   showOwnership()
 }
 
-// const getListItemsFailure = () => {
-//   $('#user-message').text('Failed to get Bucket list Items! :( Please try again.')
-//   setTimeout(function () {
-//     $('#user-message').text('')
-//   }, 2000)
-//   $('form').trigger('reset')
-// }
-//
-// const updateListItemSuccess = function (responseData) {
-//   $('#user-message').html('You have successfully updated your Bucket List')
-//   $('.list-item').trigger('reset')
-//   setTimeout(function () {
-//     $('#user-message').text('')
-//   }, 2000)
-// }
-//
-// const updateListItemFailure = () => {
-//   $('#user-message').text('Failed to update Bucket list Item! :( Please try again.')
-//   $('.list-item').trigger('reset')
-//   setTimeout(function () {
-//     $('#user-message').text('')
-//   }, 2000)
-// }
-//
+const onGetAccountsFailure = () => {
+  $('#user-message').text('Failed to get Bucket list Items! :( Please try again.')
+  setTimeout(function () {
+    $('#user-message').text('')
+  }, 2000)
+  $('form').trigger('reset')
+}
+
+const onUpdateAccountSuccess = function (responseData) {
+  console.log('Update my accounts $$$$')
+  $('#user-message').html('Account Updated!')
+  $('.list-item').trigger('reset')
+  setTimeout(function () {
+    $('#user-message').text('')
+  }, 2000)
+}
+
+const onUpdateAccountFailure = () => {
+  console.log('my accounts are loading...')
+  $('#user-message').text('Failed to update Bucket list Item! :( Please try again.')
+  $('.list-item').trigger('reset')
+  setTimeout(function () {
+    $('#user-message').text('')
+  }, 2000)
+}
+
 // const deleteListItemSuccess = function () {
 //   $('#user-message').html('ENTRY DELETED')
 //   setTimeout(function () {
@@ -81,5 +81,8 @@ const getAccountSuccess = function (responseData) {
 module.exports = {
   onCreateAccountSuccess,
   onCreateAccountFailure,
-  getAccountSuccess
+  onGetAccountSuccess,
+  onGetAccountsFailure,
+  onUpdateAccountSuccess,
+  onUpdateAccountFailure
 }

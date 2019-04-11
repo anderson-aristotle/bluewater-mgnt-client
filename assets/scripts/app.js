@@ -32,7 +32,7 @@ $(() => {
 
   // account-resource
   $('#form-create-accounts').on('submit', accountsEvents.onCreateAccount)
-  $('#account-button').on('submit', '.form-update', accountsEvents.onUpdateAccount)
+  $('#create-account-button').on('click', '.form-update', accountsEvents.onUpdateAccount)
   $('#get-accounts').on('click', '.delete-button', accountsEvents.onDeleteAccount)
   $('#get-accounts').on('click', '.list-title', accountsEvents.showUpdateForm)
 })

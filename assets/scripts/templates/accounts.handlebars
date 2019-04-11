@@ -1,4 +1,37 @@
 {{#each accounts as |account|}}
   <h4 class="name">Name: {{account.name}}</h4>
   <h4 class="account">Amount:  {{account.number}}</h4>
+
+
+  <div class="card-body">
+    <h5 class="card-title text-center" style="font-size: 30px;">Create an Investment Account</h5>
+    <form id="form-create-accounts">
+      <div class="form-label mb-3">
+        <div class="input-group-prepend">
+          <span> <label class="input-group-text" for="inputGroupSelect01">Options</label></span>
+        </div>
+        <select class="custom-select" name="account[name]" id="inputGroupSelect01">
+          <option selected>Choose...</option>
+          <option  value="1">Private Equity</option>
+          <option  value="2">Investment Fund</option>
+          <option  value="3">Foundation Donation</option>
+        </select>
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text">$</span>
+          </div>
+          <input type="number" name="account[number]"  class="form-control" aria-label="Amount (to the nearest dollar)">
+          <div class="input-group-append">
+            <span class="input-group-text">.00</span>
+          </div>
+        </div>
+        <button id="account-update-button" class="btn btn-lg primary btn-block text-uppercase" type="submit">
+          Update
+        </button>
+        <button id="account-delete-button" class="btn btn-lg primary btn-block text-uppercase" type="submit">
+          Delete
+        </button>
+      </form>
+    <hr class="my-4">
+  </div>
 {{/each}}

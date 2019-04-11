@@ -14,13 +14,25 @@ const onCreateAccount = (event) => {
 }
 
 const onGetAccounts = function () {
+  event.preventDefault()
   api.onGetAccounts()
-    .then(ui.getAccountSuccess)
-    .catch(ui.getAccountFailure)
+    .then(ui.onGetAccountSuccess)
+    .catch(ui.onGetAccountFailure)
+}
+
+const onUpdateAccount = function (event) {
+  event.preventDefault()
+  console.log('Events makes Sense!')
+  const accountId = event.target.id
+  const formData = getFormFields(event.target)
+  $('#all' + accountId).hide()
+  api.onUpdateAccount(event, formData)
+    .then(ui.onUpdateAccountSuccess)
+    .catch(ui.onUpdateAccountFailure)
 }
 
 module.exports = {
-
   onCreateAccount,
-  onGetAccounts
+  onGetAccounts,
+  onUpdateAccount
 }
