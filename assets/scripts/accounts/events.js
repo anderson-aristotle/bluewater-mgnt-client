@@ -28,6 +28,7 @@ const onUpdateAccount = function (event) {
   $('#all' + id).hide()
   api.onUpdateAccount(id, formData)
     .then(ui.onUpdateAccountSuccess)
+    .then(onGetAccounts)
     .catch(ui.onUpdateAccountFailure)
 }
 

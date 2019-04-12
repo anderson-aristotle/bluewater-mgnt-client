@@ -12,6 +12,7 @@ const onCreateAccountSuccess = (responseData) => {
   setTimeout(function () {
     $('#user-message').text('')
   }, 2000)
+  $('form').trigger('reset')
 }
 
 const onCreateAccountFailure = () => {
@@ -45,6 +46,7 @@ const onUpdateAccountSuccess = (responseData) => {
   setTimeout(function () {
     $('#user-message').text('')
   }, 2000)
+  $('form').trigger('reset')
 }
 
 const onUpdateAccountFailure = () => {
@@ -54,6 +56,7 @@ const onUpdateAccountFailure = () => {
   setTimeout(function () {
     $('#user-message').text('')
   }, 2000)
+  $('form').trigger('reset')
 }
 
 const onDeleteAccountSuccess = () => {

@@ -20,6 +20,7 @@ const createListItemSuccess = (responseData) => {
   setTimeout(function () {
     $('#user-message').text('')
   }, 2000)
+  $('form').trigger('reset')
 }
 
 const createListItemFailure = () => {
