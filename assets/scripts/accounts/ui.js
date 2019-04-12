@@ -20,6 +20,17 @@ const onCreateAccountSuccess = (responseData) => {
   setTimeout(function () {
     $('#user-message').text('')
   }, 2000)
+  if (name === 1) {
+    return 'Private Equity'
+  } else {
+    if (name === 2) {
+      return 'Investment Fund'
+    } else {
+      if (name === 3) {
+        return 'Foundation Donation'
+      }
+    }
+  }
 }
 
 const onCreateAccountFailure = () => {
@@ -31,9 +42,10 @@ const onCreateAccountFailure = () => {
 }
 
 const onGetAccountSuccess = function (responseData) {
+  console.log('works fine')
   store.accounts = responseData.accounts
-  const formattedListItems = formatAccounts({accounts: store.accounts})
-  $('#get-accounts').html(formattedListItems)
+  const formattedAccounts = formatAccounts({accounts: store.accounts})
+  $('#get-accounts').html(formattedAccounts)
   $('form').trigger('reset')
   showOwnership()
 }

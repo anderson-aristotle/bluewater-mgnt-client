@@ -15,6 +15,7 @@ const onCreateAccount = function (formData) {
 }
 
 const onGetAccounts = function () {
+  console.log('I make money!')
   return $.ajax({
     url: config.apiUrl + '/accounts',
     method: 'GET',
@@ -25,7 +26,6 @@ const onGetAccounts = function () {
 }
 
 const onUpdateAccount = function (id, formData) {
-  console.log('Update API is working!')
   return $.ajax({
     url: config.apiUrl + `/accounts/${id}`,
     method: 'PATCH',
