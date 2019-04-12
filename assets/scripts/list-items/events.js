@@ -5,9 +5,7 @@ const ui = require('./ui.js')
 
 const onCreateListItem = (event) => {
   event.preventDefault()
-
   const formData = getFormFields(event.target)
-
   api.createListItem(formData)
     .then(ui.createListItemSuccess)
     .then(() => { onGetListItems() })
@@ -31,12 +29,9 @@ const onDeleteListItem = function (event) {
 
 const onUpdateListItem = function (event) {
   event.preventDefault()
-
   const listItemId = event.target.id
-
   const formData = getFormFields(event.target)
   $('#all' + listItemId).hide()
-
   api.updateListItem(listItemId, formData)
     .then(ui.updateListItemSuccess)
     .then(onGetListItems)

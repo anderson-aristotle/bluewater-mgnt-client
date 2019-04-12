@@ -148,6 +148,7 @@
             <div class="">
               <div class="card-body">
                 <h5 class="card-title text-center" style="font-size: 30px;">Create New Bucket List Event</h5>
+
                 <form id="form-create-list-items">
                   <div class="form-label-group">
                     <input type="text" name="listItem[title]" id="inputEmailSignIx" class="form-control" placeholder="Email address" />
@@ -157,7 +158,7 @@
                     <input type="text" name="listItem[description]" id="inputPasswordSignIx" class="form-control" placeholder="Password" required>
                     <label for="inputPasswordSignIx">Description</label>
                   </div>
-                  <button id="sign-in-butto" class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Add</button>
+                  <button id="create-acct-btn" class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Add</button>
                   <hr class="my-4">
                 </form>
               </div>
@@ -175,53 +176,52 @@
   <!-- Account Page -->
   <section id="accounts-page" class="d-none">
     <main class="account-page" id="account-list-page">
-      <!-- <main class="list-items"> -->
       <p style="font-size: 60px; color: saddlebrown; text-align: center;">Investment Account</p>
       <div id="sign" class="container">
         <div class="row">
           <div class="col-sm-12 col-md-12 col-lg-12 mx-auto" style="margin-top: -20px;">
             <div class="">
               <div class="card-body">
-                <h5 class="card-title text-center" style="font-size: 30px;">Create an Investment</h5>
-                <form id="form-create-accounts">
 
-                  <div class="input-group mb-3">
-                    <div class="input-group-prepend">
-                      <label class="input-group-text" for="inputGroupSelect01">Options</label>
+                <!-- Create Account -->
+
+                <div class="card-body">
+                  <h5 class="card-title text-center" style="font-size: 30px;">Create an Investment Account</h5>
+                  <form id="form-create-accounts">
+                    <div class="form-label mb-3">
+                      <div class="input-group-prepend">
+                        <span><label class="input-group-text" for="inputGroupSelect01">Options</label></span>
+                      <select class="custom-select" name="account[name]" id="inputGroupSelect01">
+                        <option selected>Choose...</option>
+                        <option  value="1">Private Equity</option>
+                        <option  value="2">Investment Fund</option>
+                        <option  value="3">Foundation Donation</option>
+                      </select>
                     </div>
-                    <select class="custom-select" id="inputGroupSelect01">
-                      <option selected>Choose...</option>
-                      <option value="1">Private Equity</option>
-                      <option value="2">Investment Fund</option>
-                      <option value="3">Foundation Donation</option>
-                    </select>
-                  </div>
-              </div>
-
-              <!-- <div class="form-label-group"> -->
-              <!-- <input type="text" name="account[title]" id="inputEmailSignIx" class="form-control" placeholder="Email address" />
-              <label for="inputEmailSignIx">Account Type</label> -->
-              <!-- <div class="form-label-group"> -->
-
-              <div class="input-group mb-3">
-                <div class="input-group-prepend">
-                  <span class="input-group-text">$</span>
-                </div>
-                <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
-                <div class="input-group-append">
-                  <span class="input-group-text">.00</span>
+                      <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                          <span class="input-group-text">$</span>
+                        </div>
+                        <input type="number" name="account[number]"  class="" aria-label="Amount (to the nearest dollar)">
+                        <div class="input-group-append">
+                          <span class="input-group-text">.00</span>
+                        </div>
+                      </div>
+                      <button id="create-account-button" class="btn btn-lg primary btn-block text-uppercase" type="submit">
+                        Create Account
+                      </button>
+                    </form>
+                  <hr class="my-4">
                 </div>
               </div>
-
-              <!-- <input type="text" name="listItem[description]" id="inputPasswordSignIx" class="form-control" placeholder="Password" required>
-                      <label for="inputPasswordSignIx">Amount</label> -->
             </div>
-            <button id="create-acct-btn" class="btn btn-lg btn-primary btn-block text-uppercase" type="button">Add</button>
-            <hr class="my-4">
-            <!-- </form> -->
           </div>
         </div>
       </div>
+      <h3 style="text-align: center; margin-bottom: 0px; color: saddlebrown; font-size: 36px; font-weight: 600;">
+        Investment Accounts</h3>
+      <p style="text-align: center;">click on accout to update</p>
+      <div id="get-accounts"></div>
     </main>
   </section>
 </body>
