@@ -6,6 +6,7 @@ const ui = require('./ui.js')
 const onGetAccounts = function () {
   api.onGetAccounts()
     .then(ui.onGetAccountSuccess)
+    .then($('#get-accounts').toggle())
     .catch(ui.onGetAccountFailure)
 }
 
@@ -41,6 +42,14 @@ const onDeleteAccount = function () {
     .catch(ui.onDeleteAccountFailure)
 }
 
+const onShowAccount = () => {
+  event.preventDefault()
+  console.log('show me the MONEY!')
+  // api.onGetAccounts()
+    .then()
+    .cathc()
+}
+
 const showUpdateForm = function (event) {
   const accountId = $(event.target).data('id')
   $('#' + accountId).toggle()
@@ -50,5 +59,6 @@ module.exports = {
   onGetAccounts,
   onUpdateAccount,
   onDeleteAccount,
-  showUpdateForm
+  showUpdateForm,
+  onShowAccount
 }

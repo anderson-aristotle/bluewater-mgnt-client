@@ -30,6 +30,9 @@ $(() => {
   $('#get-list-items').on('click', '.delete-button', listItemsEvents.onDeleteListItem)
   $('#get-list-items').on('click', '.list-title', listItemsEvents.showUpdateForm)
 
+  // Toggle Button
+  $('#show-account-button').on('click', accountsEvents.onGetAccounts)
+
   // account-resource
   $('#form-create-accounts').on('submit', accountsEvents.onCreateAccount)
   $('#get-accounts').on('submit', '#form-create-accounts', accountsEvents.onUpdateAccount)
