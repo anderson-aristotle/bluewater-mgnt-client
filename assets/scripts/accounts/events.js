@@ -21,10 +21,12 @@ const onCreateAccount = (event) => {
 const onUpdateAccount = function (event) {
   event.preventDefault()
   console.log('Money, Money, Money!')
-  const accountId = event.target.id
+  const id = $(event.target).data('id')
   const formData = getFormFields(event.target)
-  $('#all' + accountId).hide()
-  api.onUpdateAccount(event, formData)
+  console.log(formData)
+  console.log(id)
+  $('#all' + id).hide()
+  api.onUpdateAccount(id, formData)
     .then(ui.onUpdateAccountSuccess)
     .catch(ui.onUpdateAccountFailure)
 }
