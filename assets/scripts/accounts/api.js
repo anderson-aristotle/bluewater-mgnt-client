@@ -15,7 +15,6 @@ const onCreateAccount = function (formData) {
 }
 
 const onGetAccounts = function () {
-  console.log('I make money!')
   return $.ajax({
     url: config.apiUrl + '/accounts',
     method: 'GET',
@@ -26,6 +25,7 @@ const onGetAccounts = function () {
 }
 
 const onUpdateAccount = function (id, formData) {
+  console.log('api recieves new money!')
   return $.ajax({
     url: config.apiUrl + `/accounts/${id}`,
     method: 'PATCH',
@@ -36,7 +36,7 @@ const onUpdateAccount = function (id, formData) {
   })
 }
 
-const deleteAccount = function (id) {
+const onDeleteAccount = function (id) {
   return $.ajax({
     url: config.apiUrl + '/accounts/' + `${id}`,
     method: 'DELETE',
@@ -50,5 +50,5 @@ module.exports = {
   onCreateAccount,
   onGetAccounts,
   onUpdateAccount,
-  deleteAccount
+  onDeleteAccount
 }
