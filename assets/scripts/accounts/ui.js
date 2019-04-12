@@ -4,15 +4,7 @@ const store = require('../store.js')
 const formatAccounts = require('../templates/accounts.handlebars')
 
 const showOwnership = () => {
-  $(`.list-item[data-owner=${store.user._id}]`).show()
-  $('.form-update').hide()
-  for (let i = 0; i < store.accounts.length; i++) {
-    if (store.accounts[i].boolean === true) {
-      const target = store.accounts[i]._id
-      $('#title' + target).css('text-decoration', 'line-through')
-      $('#description' + target).css('text-decoration', 'line-through')
-    }
-  }
+  $(`.my-account[data-owner=${store.user._id}]`).show()
 }
 
 const onCreateAccountSuccess = (responseData) => {
@@ -20,13 +12,14 @@ const onCreateAccountSuccess = (responseData) => {
   setTimeout(function () {
     $('#user-message').text('')
   }, 2000)
-  if (name === 1) {
+  const value = responseData.account.value
+  if (value === '') {
     return 'Private Equity'
   } else {
-    if (name === 2) {
+    if (value === '') {
       return 'Investment Fund'
     } else {
-      if (name === 3) {
+      if (value === 3) {
         return 'Foundation Donation'
       }
     }
@@ -76,19 +69,20 @@ const onUpdateAccountFailure = () => {
   }, 2000)
 }
 
-// const deleteListItemSuccess = function () {
-//   $('#user-message').html('ENTRY DELETED')
-//   setTimeout(function () {
-//     $('#user-message').text('')
-//   }, 2000)
-// }
-//
-// const deleteListItemFailure = () => {
-//   $('#user-message').text('Failed to delete Bucket list Item! :( Please try again.')
-//   setTimeout(function () {
-//     $('#user-message').text('')
-//   }, 2000)
-// }
+const onDeleteAccountSuccess = function () {
+  console.log('never dat bruh - dueces')
+  $('#user-message').html('ENTRY DELETED')
+  setTimeout(function () {
+    $('#user-message').text('')
+  }, 2000)
+}
+
+const onDeleteAccountFailure = () => {
+  $('#user-message').text('Failed to delete Bucket list Item! :( Please try again.')
+  setTimeout(function () {
+    $('#user-message').text('')
+  }, 2000)
+}
 
 module.exports = {
   onCreateAccountSuccess,
@@ -96,5 +90,7 @@ module.exports = {
   onGetAccountSuccess,
   onGetAccountsFailure,
   onUpdateAccountSuccess,
-  onUpdateAccountFailure
+  onUpdateAccountFailure,
+  onDeleteAccountSuccess,
+  onDeleteAccountFailure
 }

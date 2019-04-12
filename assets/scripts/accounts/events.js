@@ -4,8 +4,6 @@ const api = require('./api.js')
 const ui = require('./ui.js')
 
 const onGetAccounts = function () {
-  console.log('make money baby!')
-  // event.preventDefault()
   api.onGetAccounts()
     .then(ui.onGetAccountSuccess)
     .catch(ui.onGetAccountFailure)
@@ -14,6 +12,7 @@ const onGetAccounts = function () {
 const onCreateAccount = (event) => {
   event.preventDefault()
   const formData = getFormFields(event.target)
+  console.log(formData)
   api.onCreateAccount(formData)
     .then(ui.onCreateAccountSuccess)
     .then(() => { onGetAccounts() })
@@ -30,8 +29,19 @@ const onUpdateAccount = function (event) {
     .catch(ui.onUpdateAccountFailure)
 }
 
+const onDeleteAccount = function () {
+  event.preventDefault()
+  const accountId = $(event.target).data('id')
+  console.log(accountId)
+  $('#all' + accountId).hide()
+  api.onDeleteAccount(accountId)
+    .then(ui.onDeleteAccountSuccess)
+    .catch(ui.onDeleteAccountFailure)
+}
+
 module.exports = {
   onCreateAccount,
   onGetAccounts,
-  onUpdateAccount
+  onUpdateAccount,
+  onDeleteAccount
 }
