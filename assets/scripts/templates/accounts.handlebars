@@ -4,8 +4,8 @@
     <h4 class="account">Amount:$ {{account.number}}</h4>
 
     <div class="card-body">
-      <h5 class="card-title text-center" style="font-size: 30px;">Create an Investment Account</h5>
-      <form id="form-create-accounts" data-id="{{account._id}}">
+      <h5 class="card-title text-center" style="font-size: 30px;">Investment Account</h5>
+      <form id="form-create-accounts" data-id="{{account._id}}" class="update-acct-form">
         <div class="form-label mb-3">
           <div class="input-group-prepend">
             <span><label class="input-group-text" for="inputGroupSelect01">Options</label></span>
@@ -35,4 +35,5 @@
       </form>
     </div>
   </div>
+  <div id="get-accounts"></div>
 {{/each}}

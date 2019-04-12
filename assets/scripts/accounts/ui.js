@@ -12,18 +12,6 @@ const onCreateAccountSuccess = (responseData) => {
   setTimeout(function () {
     $('#user-message').text('')
   }, 2000)
-  const value = responseData.account.value
-  if (value === '') {
-    return 'Private Equity'
-  } else {
-    if (value === '') {
-      return 'Investment Fund'
-    } else {
-      if (value === 3) {
-        return 'Foundation Donation'
-      }
-    }
-  }
 }
 
 const onCreateAccountFailure = () => {
@@ -34,8 +22,7 @@ const onCreateAccountFailure = () => {
   $('form').trigger('reset')
 }
 
-const onGetAccountSuccess = function (responseData) {
-  console.log('works fine')
+const onGetAccountSuccess = (responseData) => {
   store.accounts = responseData.accounts
   const formattedAccounts = formatAccounts({accounts: store.accounts})
   $('#get-accounts').html(formattedAccounts)
@@ -51,7 +38,7 @@ const onGetAccountsFailure = () => {
   $('form').trigger('reset')
 }
 
-const onUpdateAccountSuccess = function (responseData) {
+const onUpdateAccountSuccess = (responseData) => {
   console.log('Update my accounts $$$$')
   $('#user-message').html('Account Updated!')
   $('.list-item').trigger('reset')
@@ -69,8 +56,7 @@ const onUpdateAccountFailure = () => {
   }, 2000)
 }
 
-const onDeleteAccountSuccess = function () {
-  console.log('never dat bruh - dueces')
+const onDeleteAccountSuccess = () => {
   $('#user-message').html('ENTRY DELETED')
   setTimeout(function () {
     $('#user-message').text('')
