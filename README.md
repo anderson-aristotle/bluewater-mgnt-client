@@ -50,11 +50,11 @@ As a signed in user, I would like to see all my accounts.
 
 ## Wireframe
 1.  [Bucket List](https://imgur.com/FWO58Lt)
-2.  [Investment Account]()
+2.  [Investment Account](https://imgur.com/9tVFE62)
 
 ## Entity Relationship Diagram
 1.  [Bucket List](https://i.imgur.com/sVMAU3S.jpg)
-2.  [ERD](https://i.imgur.com/sVMAU3S.jpg)
+2.  [Investment Account](https://imgur.com/nytCtqQ)
 
 ## Planning, process, and problem-solving strategies
 1. Planned page layout via wireframe.
@@ -63,17 +63,12 @@ As a signed in user, I would like to see all my accounts.
 4. Linked the backend api with the front-end browser.
 
 ## Future Goal(s)
-In future iterations, we would like to add some animation, especially in the
-bucket list title. Ideally, we'd also spend more time on styling as well; we
-used Bootstrap templates, and customized them just enough for MVP.
-
 Integrate with a 3rd location-based API:
-  - Allows a user to search for a location or venue to add to their bucket list items.
-  - Autofill input field.
-  - Drop pins on a map.
-  - Add social features to site, such as chat boxes.
+  - Allows a user to search for a location or venues or events
+  - Live financial updates on investment weights and percentages
+  - Alow user to contribute cash to investment classes
+  - Add social features to site, such as chat boxes
   - Allow users to make certain list items public, but default to private.
-  - Allow users to upload an image when they complete an item.
 
   ## [License](LICENSE)
 
