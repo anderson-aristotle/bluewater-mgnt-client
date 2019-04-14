@@ -40,7 +40,6 @@ const onGetAccountsFailure = () => {
 }
 
 const onUpdateAccountSuccess = (responseData) => {
-  console.log('Update my accounts $$$$')
   $('#user-message').html('Account Updated!')
   $('.list-item').trigger('reset')
   setTimeout(function () {
@@ -50,7 +49,6 @@ const onUpdateAccountSuccess = (responseData) => {
 }
 
 const onUpdateAccountFailure = () => {
-  console.log('my accounts are loading...')
   $('#user-message').text('Failed to update Bucket list Item! :( Please try again.')
   $('.list-item').trigger('reset')
   setTimeout(function () {
