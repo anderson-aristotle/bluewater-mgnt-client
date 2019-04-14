@@ -49,12 +49,12 @@ As a signed in user, I would like to delete my account.
 As a signed in user, I would like to see all my accounts.
 
 ## Wireframe
-[Bucket List](https://imgur.com/FWO58Lt)
-[Investment Account]()
+1.  [Bucket List](https://imgur.com/FWO58Lt)
+2.  [Investment Account]()
 
 ## Entity Relationship Diagram
-[Bucket List](https://i.imgur.com/sVMAU3S.jpg)
-[ERD](https://i.imgur.com/sVMAU3S.jpg)
+1.  [Bucket List](https://i.imgur.com/sVMAU3S.jpg)
+2.  [ERD](https://i.imgur.com/sVMAU3S.jpg)
 
 ## Planning, process, and problem-solving strategies
 1. Planned page layout via wireframe.
