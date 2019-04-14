@@ -2,13 +2,21 @@
 This is the client repository for the web app -- Bucket List. This website allows users to view their bucket list, where they can add, update, and delete items.
 
 ## Directory
-- Bucket List Front End Repo: https://github.com/numbah5/bucketlist-client
-- Bucket List Back End Repo: https://github.com/numbah5/bucketlist-api
-- Deployed Site: https://numbah5.github.io/bucketlist-client/
-- Heroku: https://bucketlist-app-api.herokuapp.com/
+Bucket List Front End Repo: https://github.com/numbah5/bucketlist-client
+Bucket List Back End Repo: https://github.com/numbah5/bucketlist-api
+Deployed Site: https://numbah5.github.io/bucketlist-client/
+Heroku: https://bucketlist-app-api.herokuapp.com/
+
+Bluewater Management
+  [Backend](https://github.com/anderson-aristotle/bluewater-mgnt-api)
+  [Front End](https://github.com/anderson-aristotle/bluewater-mgnt-client)
+  [Deployed]()
+  [Heroku](https://bluewater-mgnt-api.herokuapp.com/)
 
 ## How it works
-As a user, one can create, read, update and delete bucketlist items. This tool is useful when user need a way to manage their life's lists of things to accomplish.
+This is a prototype of a financial services product. User will be able to log-in
+and plan their financial future by creating bucketlist items and forming
+investment accounts to help them achieve their goals.
 
 ## Technology
 - Ajax
@@ -28,15 +36,23 @@ As an unregistered user, I would like to sign up with email and password.
 As a registered user, I would like to sign in with email and password.
 As a signed in user, I would like to change password.
 As a signed in user, I would like to sign out.
+
 As a signed in user, I would like to create a bucket list item with a title and description.
 As a signed in user, I would like to update my bucket list item's title and description.
 As a signed in user, I would like to delete my bucket list item.
 As a signed in user, I would like to see all my bucket list items.
 
+As a signed in user, I would like to create an investment account.
+As a signed in user, I would like to update my account's type and amount.
+As a signed in user, I would like to delete my account.
+As a signed in user, I would like to see all my accounts.
+
 ## Wireframe
-[Wireframe](https://imgur.com/FWO58Lt)
+[Bucket List](https://imgur.com/FWO58Lt)
+[Investment Account]()
 
 ## Entity Relationship Diagram
+[Bucket List](https://i.imgur.com/sVMAU3S.jpg)
 [ERD](https://i.imgur.com/sVMAU3S.jpg)
 
 ## Planning, process, and problem-solving strategies
@@ -63,9 +79,3 @@ Integrate with a 3rd location-based API:
   1. All content is licensed under a CC­BY­NC­SA 4.0 license.
   2. All software code is licensed under GNU GPLv3. [ ] For commercial use or
       alternative licensing, please contact legal@ga.co.
-## Members
-* Allan Oliveira
-* Aristotle Anderson, "Rex"
-* Henrique Oliveria
-* Rishi Surana
-* Vicky Rockingster
