@@ -2,7 +2,7 @@
 
 let apiUrl
 const apiUrls = {
-  production: 'https://bucketlist-app-api.herokuapp.com',
+  production: 'https://bluewater-mgnt-api.herokuapp.com/',
   development: 'http://localhost:4741'
 }
 
