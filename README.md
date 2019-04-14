@@ -1,4 +1,4 @@
-## Bucket List Client
+## Bluewater Management -  Client
 This is the client repository for the web app -- Bucket List. This website allows users to view their bucket list, where they can add, update, and delete items.
 
 ## Directory
