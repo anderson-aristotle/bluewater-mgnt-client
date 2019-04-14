@@ -2,16 +2,17 @@
 This is the client repository for the web app -- Bucket List. This website allows users to view their bucket list, where they can add, update, and delete items.
 
 ## Directory
-Bucket List Front End Repo: https://github.com/numbah5/bucketlist-client
-Bucket List Back End Repo: https://github.com/numbah5/bucketlist-api
-Deployed Site: https://numbah5.github.io/bucketlist-client/
-Heroku: https://bucketlist-app-api.herokuapp.com/
+Bucket List
+1.  [Front End](https://github.com/numbah5/bucketlist-client)
+2.  [Backend](https://github.com/numbah5/bucketlist-api)
+3.  [Deployed](https://numbah5.github.io/bucketlist-client/)
+4.  [Heroku](https://bucketlist-app-api.herokuapp.com/)
 
 Bluewater Management
-  [Backend](https://github.com/anderson-aristotle/bluewater-mgnt-api)
-  [Front End](https://github.com/anderson-aristotle/bluewater-mgnt-client)
-  [Deployed]()
-  [Heroku](https://bluewater-mgnt-api.herokuapp.com/)
+1.  [Backend](https://github.com/anderson-aristotle/bluewater-mgnt-api)
+2.  [Front End](https://github.com/anderson-aristotle/bluewater-mgnt-client)
+3.  [Deployed]()
+4.  [Heroku](https://bluewater-mgnt-api.herokuapp.com/)
 
 ## How it works
 This is a prototype of a financial services product. User will be able to log-in
