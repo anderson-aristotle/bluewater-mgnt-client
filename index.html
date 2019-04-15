@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Bluewater Management, LLC</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Do not add `link` tags-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+  <!-- Do not add `script` tags-->
+  <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+  <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+</head>
+
+<body>
+  <div id="user-message" style="width: 500px; height: 20px;"></div>
+
+  <!-- Navbar -->
+  <nav class="hidden post-login">
+    <button type="button" id="sign-out-button" class="btn btn-primary" data-toggle="modal" data-target="#signOutModal" data-whatever="@fat" style="margin-left: 20px;">Sign Out</button>
+    <button type="button" id="account-button" class="btn btn-primary" data-toggle="modal" data-target="#changePasswordModal" data-whatever="@fat">Account</button>
+    <button id="acct-pg-btn" class="mr-auto">Toggle Page</button>
+
+  </nav>
+
+  <!-- Authentication Page  -->
+  <section class="authentication-page" id="authentication-page">
+    <!-- <img class="animated flip delay-1s" style="height: 40px; position: absolute; left:10px; bottom: 10px;" src="public/bucket.png" alt="bucket"> -->
+    <p style="font-size: 60px; color: Egyptian blue; text-align: center;">Bluewater Management, LLC</p>
+    <div id="sign-in" class="container">
+      <div class="row">
+        <div class="col-sm-9 col-md-7 col-lg-5 mx-auto" style="margin-top: -20px;">
+          <div class="card card-signin my-5">
+            <div class="card-body">
+              <h5 class="card-title text-center" style="font-size: 30px;">Sign In</h5>
+
+              <!-- Sign-In Form -->
+              <form id="form-sign-in">
+                <div class="form-label-group">
+                  <input type="email" name="credentials[email]" id="inputEmailSignIn" class="form-control" placeholder="Email address" />
+                  <label for="inputEmailSignIn">Email address</label>
+                </div>
+                <div class="form-label-group">
+                  <input type="password" name="credentials[password]" id="inputPasswordSignIn" class="form-control" placeholder="Password" required>
+                  <label for="inputPasswordSignIn">Password</label>
+                </div>
+                <button id="sign-in-button" class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Sign in</button>
+                <button id="go-to-sign-up-button" class="btn btn-lg btn-primary btn-block text-uppercase" type="button">Not Signed Up?</button>
+                <hr class="my-4">
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="sign-up" class="container">
+      <div class="row">
+        <div class="col-sm-9 col-md-7 col-lg-5 mx-auto" style="margin-top: -38px;">
+          <div class="card card-signin my-5">
+            <div class="card-body">
+              <h5 class="card-title text-center" style="font-size: 30px;">Sign Up</h5>
+
+              <!-- Sign-Up Form -->
+              <form class="form-sign-up" id="form-sign-up">
+                <div class="form-label-group">
+                  <input name="credentials[firstName]" type="text" id="inputFirstName" class="form-control" placeholder="First Name" required autofocus>
+                  <label for="inputFirstName">First Name</label>
+                </div>
+                <div class="form-label-group">
+                  <input name="credentials[lastName]" type="text" id="inputLastName" class="form-control" placeholder="Last Name" required autofocus>
+                  <label for="inputLastName">Last Name</label>
+                </div>
+                <div class="form-label-group">
+                  <input type="email" id="inputEmail" name="credentials[email]" class="form-control" placeholder="Email address" required autofocus>
+                  <label for="inputEmail">Email address</label>
+                </div>
+                <div class="form-label-group">
+                  <input type="password" id="inputPassword" name="credentials[password]" class="form-control" placeholder="Password" required autofocus>
+                  <label for="inputPassword">Password</label>
+                </div>
+                <div class="form-label-group">
+                  <input type="password" id="inputConfirmPassword" name="credentials[password_confirmation]" class="form-control" placeholder="Confirm Password" required>
+                  <label for="inputConfirmPassword">Confirm Password</label>
+                </div>
+                <button id="sign-up-button" class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Sign up</button>
+                <button id="go-to-sign-in-button" class="btn btn-lg btn-primary btn-block text-uppercase" type="button">Go to Sign In</button>
+                <hr class="my-4">
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="modal fade" id="changePasswordModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div id="account-modal" class="modal-dialog" role="document">
+      <div class="modal-content" style="margin-top: 50px; background-color: black; height: 96vh; margin-top: -27px;">
+        <div class="modal-header" style="color: white;">
+          <h1 class="modal-title modal-dialog" id="exampleModalLabel">Account</h1>
+          <div id="changePasswordModalMessages" class="modal-messages" style="font-weight: 700; font-size: 26px; color: red;"></div>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true" style="font-size: 30px; color: white;">&times;</span>
+          </button>
+        </div>
+        <div class="modal-dialog" style="color: white; margin: .65rem; padding-top: 30px">
+          <h5 class="modal-title" id="full-name"></h5>
+          <div id="changePasswordModalMessages" class="modal-messages" style="position: relative; left: 60px; font-weight: 700; font-size: 26px; color: red;"></div>
+        </div>
+        <div class="modal-dialog" style="color: white; margin: .65rem;">
+          <h5 class="modal-title" id="email"></h5>
+          <div id="changePasswordModalMessages" class="modal-messages" style="position: relative; left: 60px; font-weight: 700; font-size: 26px; color: red;"></div>
+        </div>
+        <div class="modal-header" style="color: white; padding-top: 120px;">
+          <h4 class="modal-title" id="exampleModalLabel">CHANGE PASSWORD</h4>
+          <div id="changePasswordModalMessages" class="modal-messages" style="position: relative; left: 60px; font-weight: 700; font-size: 26px; color: red;"></div>
+        </div>
+        <div class="modal-body">
+          <form id="btn-change-password">
+            <div class="form-group row">
+              <label for="inputPassword" class="col-sm-5 col-form-label" style="color: white; font-size: 20px">Old Password</label>
+              <div class="col-sm-7">
+                <input name="passwords[old]" type="password" class="form-control" id="inputPasswordChangePassword" style="width: 260px;">
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="inputPassword" class="col-sm-5 col-form-label" style="color: white; font-size: 20px">New Password</label>
+              <div class="col-sm-7">
+                <input name="passwords[new]" type="password" class="form-control" id="inputConfirmPasswordChangePassword" style="width: 260px;">
+              </div>
+            </div>
+            <button type="submit" class="btn btn-primary" style="background-color: blue; border-color: white;  position: relative; left: 280px;">CHANGE PASSWORD</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Landing Page -  Sign-Out Button - Modal -->
+  <section class="bucket-list-page" id="bucket-list-page">
+    <main class="list-items">
+      <p style="font-size: 60px; color: Egyptian blue; text-align: center;">Bucket List</p>
+      <div id="sign" class="container">
+        <div class="row">
+          <div class="col-sm-12 col-md-12 col-lg-12 mx-auto" style="margin-top: -20px;">
+            <div class="">
+              <div class="card-body">
+                <h5 class="card-title text-center" style="font-size: 30px;">Create New Bucket List Event</h5>
+
+                <form id="form-create-list-items">
+                  <div class="form-label-group">
+                    <input type="text" name="listItem[title]" id="inputEmailSignIx" class="form-control" placeholder="Email address" />
+                    <label for="inputEmailSignIx">Title</label>
+                  </div>
+                  <div class="form-label-group">
+                    <input type="text" name="listItem[description]" id="inputPasswordSignIx" class="form-control" placeholder="Password" required>
+                    <label for="inputPasswordSignIx">Description</label>
+                  </div>
+                  <button id="create-acct-btn" class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Add</button>
+                  <hr class="my-4">
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <h3 style="text-align: center; margin-bottom: 0px; color: Egyptian blue; font-size: 36px; font-weight: 600;">My Bucket List</h3>
+      <p style="text-align: center;">click on title to update</p>
+      <hr class="my-4">
+      <div id="get-list-items"></div>
+    </main>
+  </section>
+
+  <!-- Account Page -->
+  <section id="accounts-page" class="d-none">
+    <main class="account-page" id="account-list-page">
+      <p style="font-size: 60px; color: Egyptian blue; text-align: center;">Investment Account</p>
+      <div id="sign" class="container">
+        <div class="row">
+          <div class="col-sm-12 col-md-12 col-lg-12 mx-auto" style="margin-top: -20px;">
+            <div class="">
+              <div class="card-body">
+
+                <!-- Create Account -->
+
+                <div class="card-body">
+                  <h5 class="card-title text-center" style="font-size: 30px;">Create an Investment Account</h5>
+                  <form id="form-create-accounts">
+                    <div class="form-label mb-3">
+                      <div class="input-group-prepend">
+                        <span><label class="input-group-text" for="inputGroupSelect01">Options</label></span>
+                      <select class="custom-select" name="account[name]" id="inputGroupSelect01">
+                        <option selected>Choose...</option>
+                        <option  value="1">Private Equity</option>
+                        <option  value="2">Investment Fund</option>
+                        <option  value="3">Foundation Donation</option>
+                      </select>
+                    </div>
+                      <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                          <span class="input-group-text">$</span>
+                        </div>
+                        <input type="number" name="account[number]" class="" aria-label="Amount (to the nearest dollar)">
+                        <div class="input-group-append">
+                          <span  class="input-group-text">.00</span>
+                        </div>
+                      </div>
+                      <button id="create-account-button" class="btn btn-lg primary btn-block text-uppercase" type="submit">
+                        Create Account
+                      </button>
+                    </form>
+                  <hr class="my-4">
+                </div>
+              </div>
+              <button id="show-account-button" class="btn btn-sm primary btn-block text-uppercase" type="submit">
+                Show Accounts
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <h3 style="text-align: center; margin-bottom: 0px; color: Egyptian blue; font-size: 36px; font-weight: 600;">
+        Investment Accounts</h3>
+      <p style="text-align: center;">click Show Accounts twice to see accounts</p>
+      <div id="get-accounts"></div>
+    </main>
+  </section>
+</body>
+
+</html>
