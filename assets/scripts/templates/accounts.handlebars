@@ -1,5 +1,5 @@
 {{#each accounts as |account|}}
-  <!-- <div class=" container my-account" id="all{{account._id}}" data-id="all{{account._id}}"> data-owner="{{account.owner}}"> -->
+  <div class=" container my-account" id="all{{account._id}}" data-id="all{{account._id}}" data-owner="{{account.owner}}">
 
     <h4 class="name">Name: {{investmentType account.name}}</h4>
     <h4 class="account">Amount:$ {{account.number}}</h4>
@@ -7,11 +7,11 @@
 
     <div class="card-body">
       <h5 class="card-title text-center" style="font-size: 30px;"></h5>
-      <form id="form-create-accounts" data-id="{{account._id}}" class="update-acct-form">
+      <form id="form-update-account" data-id="{{account._id}}" class="update-acct-form">
         <div class="form-label mb-3">
           <div class="input-group-prepend">
             <span><label class="input-group-text" for="inputGroupSelect01">Options</label></span>
-            <select class="custom-select" name="account[name]" id="inputGroupSelect01">
+            <select class="custom-select" name="account[name]" id="">
               <option selected>Choose...</option>
               <option value="1">Private Equity</option>
               <option value="2">Investment Fund</option>
