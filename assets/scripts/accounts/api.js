@@ -25,7 +25,6 @@ const onGetAccounts = function () {
 }
 
 const onUpdateAccount = function (id, formData) {
-  console.log('api recieves new money!')
   return $.ajax({
     url: config.apiUrl + `/accounts/${id}`,
     method: 'PATCH',

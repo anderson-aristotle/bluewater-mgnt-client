@@ -21,11 +21,8 @@ const onCreateAccount = (event) => {
 
 const onUpdateAccount = function (event) {
   event.preventDefault()
-  console.log('Money, Money, Money!')
   const id = $(event.target).data('id')
   const formData = getFormFields(event.target)
-  console.log(formData)
-  console.log(id)
   $('#all' + id).hide()
   api.onUpdateAccount(id, formData)
     .then(ui.onUpdateAccountSuccess)
@@ -44,7 +41,6 @@ const onDeleteAccount = function () {
 
 const onShowAccount = () => {
   event.preventDefault()
-  console.log('show me the MONEY!')
   // api.onGetAccounts()
     .then()
     .cathc()
