@@ -6,8 +6,13 @@
 }
 
 body {
-  background: #F0EAD6;
+  background: #d5daef;
   // background: linear-gradient(to right, #0062E6, #33AEFF);
+}
+#user-message {
+  position: center;
+  // background-color: #ffbf00;
+
 }
 
 .card-signin {
@@ -23,13 +28,13 @@ body {
 }
 
 .btn {
-  background-color: Tan;
+  background-color: #1731b0;
   border-radius: 0px;
   border: 1px solid black;
 }
 
 .btn:hover {
-  background-color: Sienna;
+  background-color: #8d9adb;
 }
 
 .card-signin .card-body {
@@ -134,7 +139,7 @@ body {
 
 .bucket-list-page {
   height: auto;
-  background-color: #F0EAD6;
+  background-color: #d5daef;
 }
 
 nav {
